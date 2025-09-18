@@ -6,22 +6,11 @@
 /*   By: qhatahet <qhatahet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 17:20:47 by qhatahet          #+#    #+#             */
-/*   Updated: 2025/08/19 13:23:12 by qhatahet         ###   ########.fr       */
+/*   Updated: 2025/09/18 17:15:50 by qhatahet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-static void	init_textures(t_game *game)
-{
-	game->map->textures = ft_calloc(1, sizeof(t_textures));
-	game->map->textures->ea = NULL;
-	game->map->textures->no = NULL;
-	game->map->textures->we = NULL;
-	game->map->textures->so = NULL;
-	game->map->textures->c = NULL;
-	game->map->textures->f = NULL;
-}
 
 void	clean_textures(t_game *game)
 {
@@ -46,7 +35,7 @@ void	clean_textures(t_game *game)
 	}
 	else
 	{
-		printf("there is no texture specifier\n");
+		printf(RED"Error"WH"there is no texture specifier\n");
 		clean_game (game);
 		exit(EXIT_FAILURE);
 	}
@@ -56,21 +45,25 @@ void	split_texture_protection(t_game *game)
 {
 	if (!game->map->textures->no)
 	{
+		printf(RED"Error"WH"\nfailed to store no\n");
 		clean_game(game);
 		exit(EXIT_FAILURE);
 	}
 	if (!game->map->textures->so)
 	{
+		printf(RED"Error"WH"\nfailed to store so\n");
 		clean_game(game);
 		exit(EXIT_FAILURE);
 	}
 	if (!game->map->textures->we)
 	{
+		printf(RED"Error"WH"\nfailed to store we\n");
 		clean_game(game);
 		exit(EXIT_FAILURE);
 	}
 	if (!game->map->textures->ea)
 	{
+		printf(RED"Error"WH"\nfailed to store ea\n");
 		clean_game(game);
 		exit(EXIT_FAILURE);
 	}
@@ -108,52 +101,6 @@ void	split_textrues(t_game *game)
 	}
 	split_texture_protection(game);
 	game->map->utils->m_start = i + 1;
-}
-
-int	check_flag(t_game *game)
-{
-	if (game->map->utils->flag->c > 1)
-		return (1);
-	if (game->map->utils->flag->f > 1)
-		return (1);
-	if (game->map->utils->flag->w > 1)
-		return (1);
-	if (game->map->utils->flag->e > 1)
-		return (1);
-	if (game->map->utils->flag->s > 1)
-		return (1);
-	if (game->map->utils->flag->n > 1)
-		return (1);
-	return (0);
-}
-
-void	check_duplicate(t_game *game)
-{
-	int		i;
-
-	i = 0;
-	while (game->map->fd[i])
-	{
-		if (ft_strnstr(game->map->fd[i], "NO", ft_strlen(game->map->fd[i])))
-			game->map->utils->flag->n += 1;
-		if (ft_strnstr(game->map->fd[i], "SO", ft_strlen(game->map->fd[i])))
-			game->map->utils->flag->s += 1;
-		if (ft_strnstr(game->map->fd[i], "WE", ft_strlen(game->map->fd[i])))
-			game->map->utils->flag->w += 1;
-		if (ft_strnstr(game->map->fd[i], "EA", ft_strlen(game->map->fd[i])))
-			game->map->utils->flag->e += 1;
-		if (ft_strnstr(game->map->fd[i], "C", ft_strlen(game->map->fd[i])))
-			game->map->utils->flag->c += 1;
-		if (ft_strnstr(game->map->fd[i], "F", ft_strlen(game->map->fd[i])))
-			game->map->utils->flag->f += 1;
-		i++;
-	}
-	if (check_flag(game))
-	{
-		printf(RED"Error"WH"\nduplicate in textures");
-		clean_game(game);
-		exit(EXIT_FAILURE);
-	}
 }
 
 void	store_textures(t_game *game)

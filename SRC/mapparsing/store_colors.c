@@ -6,7 +6,7 @@
 /*   By: qhatahet <qhatahet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 13:49:59 by qhatahet          #+#    #+#             */
-/*   Updated: 2025/08/28 18:28:31 by qhatahet         ###   ########.fr       */
+/*   Updated: 2025/09/18 16:26:20 by qhatahet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,15 @@ static void	store_ceiling(int arr[3], t_game *game)
 	int	flag;
 
 	flag = 0;
-	if (arr[0] <= 255)
+	if ((arr[0] || arr[0] == 0) && arr[0] <= 255)
 		game->map->ceiling->r = arr[0];
 	else
 		flag = 1;
-	if (arr[1] <= 255)
+	if ((arr[1] || arr[1] == 0) && arr[1] <= 255)
 		game->map->ceiling->g = arr[1];
 	else
 		flag = 1;
-	if (arr[2] <= 255)
+	if ((arr[2] || arr[2] == 0) && arr[2] <= 255)
 		game->map->ceiling->b = arr[2];
 	else
 		flag = 1;

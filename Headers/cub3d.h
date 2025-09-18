@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oalananz <oalananz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: qhatahet <qhatahet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 14:44:05 by qhatahet          #+#    #+#             */
-/*   Updated: 2025/09/15 13:46:33 by oalananz         ###   ########.fr       */
+/*   Updated: 2025/09/18 17:22:55 by qhatahet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,7 +165,6 @@ void		count_column(char *str, t_game *game);
 void		store_textures(t_game *game);
 void		count_file_lines(t_game *game);
 void		read_file(t_game *game);
-void		count_content(char **arr, t_game *game);
 int			check_if_stored(t_textures *textures);
 char		*textures_path(char *str);
 void		check_invalid_specifier(char *str, t_game *game);
@@ -180,7 +179,10 @@ void		map_existance(t_game *game);
 void		validate_map_elements(t_game *game);
 void		store_player_pos(t_game *game);
 void		init_map(t_game *game);
-
+void		init_textures(t_game *game);
+int			check_flag(t_game *game);
+void		check_duplicate(t_game *game);
+void		fill_arr(int arr[100]);
 
 # define BLACK "\033[0;30m"
 # define RED "\033[0;31m"

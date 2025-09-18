@@ -6,7 +6,7 @@
 /*   By: qhatahet <qhatahet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 17:16:28 by qhatahet          #+#    #+#             */
-/*   Updated: 2025/08/28 18:29:46 by qhatahet         ###   ########.fr       */
+/*   Updated: 2025/09/18 17:22:28 by qhatahet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,13 @@ void	check_all_digits(t_game *game, char *str, char type)
 	int		j;
 	int		y;
 	char	*s;
-	int		arr[3];
+	int		arr[100];
 
 	i = 1;
 	y = 0;
 	check_non_numeric(str + 1, game);
+	fill_arr(arr);
+	s = NULL;
 	while (str[i])
 	{
 		while (str[i] && !ft_isdigit(str[i]))
@@ -72,6 +74,7 @@ void	validate_color_length(char *s, t_game *game)
 {
 	if (!s)
 	{
+		printf(RED"ERROR"WH"\nmissing color\n");
 		clean_game(game);
 		exit(EXIT_FAILURE);
 	}
@@ -93,10 +96,10 @@ void	validate_colors(t_game *game)
 		&& (!ft_strncmp(game->map->textures->c, "C ", 2)
 			|| !ft_strncmp(game->map->textures->c, "C\t", 2)))
 	{
-		count_column(game->map->textures->f, game);
-		count_column(game->map->textures->c, game);
 		check_all_digits(game, game->map->textures->f, 'F');
 		check_all_digits(game, game->map->textures->c, 'C');
+		count_column(game->map->textures->f, game);
+		count_column(game->map->textures->c, game);
 	}
 	else
 	{

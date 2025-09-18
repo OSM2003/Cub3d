@@ -6,7 +6,7 @@
 /*   By: qhatahet <qhatahet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 08:27:52 by qhatahet          #+#    #+#             */
-/*   Updated: 2025/08/28 18:28:36 by qhatahet         ###   ########.fr       */
+/*   Updated: 2025/09/18 16:16:03 by qhatahet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,21 +52,4 @@ int	check_if_stored(t_textures *textures)
 	if (!textures->f)
 		return (0);
 	return (1);
-}
-
-void	count_content(char **arr, t_game *game)
-{
-	int	i;
-
-	i = 0;
-	while (arr[i])
-		i++;
-	if (i != 2)
-	{
-		printf("something wrong with the textures\n");
-		clean_game(game);
-		exit(EXIT_FAILURE);
-	}
-	ft_free_2d(arr);
-	arr = NULL;
 }

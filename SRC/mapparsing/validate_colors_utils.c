@@ -6,11 +6,23 @@
 /*   By: qhatahet <qhatahet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 16:10:36 by qhatahet          #+#    #+#             */
-/*   Updated: 2025/08/19 13:02:34 by qhatahet         ###   ########.fr       */
+/*   Updated: 2025/09/18 17:22:36 by qhatahet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+void	fill_arr(int arr[100])
+{
+	int	i;
+
+	i = 0;
+	while (i < 100)
+	{
+		arr[i] = -1;
+		i++;
+	}
+}
 
 void	count_column(char *str, t_game *game)
 {

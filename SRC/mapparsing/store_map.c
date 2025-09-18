@@ -6,7 +6,7 @@
 /*   By: qhatahet <qhatahet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 09:14:31 by qhatahet          #+#    #+#             */
-/*   Updated: 2025/08/19 13:22:22 by qhatahet         ###   ########.fr       */
+/*   Updated: 2025/09/18 16:03:32 by qhatahet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	store_map(t_game *game)
 
 	utils = game->map->utils;
 	i = utils->m_start;
-	while (!ft_strchr(game->map->fd[i], '1')
+	while (game->map->fd[i] && !ft_strchr(game->map->fd[i], '1')
 		&& !ft_strchr(game->map->fd[i], '0'))
 		i++;
 	utils->m_start = i;
