@@ -6,7 +6,7 @@
 /*   By: qhatahet <qhatahet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 17:16:28 by qhatahet          #+#    #+#             */
-/*   Updated: 2025/09/18 17:22:28 by qhatahet         ###   ########.fr       */
+/*   Updated: 2025/09/20 12:20:33 by qhatahet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	check_non_numeric(char *str, t_game *game)
 			i++;
 		else
 		{
-			printf(RED"ERROR"WH"\nnon numeric element in colors");
+			printf(RED"ERROR"WH"\nnon numeric element in colors\n");
 			clean_game(game);
 			exit(EXIT_FAILURE);
 		}

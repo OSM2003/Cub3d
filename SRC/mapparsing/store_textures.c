@@ -6,7 +6,7 @@
 /*   By: qhatahet <qhatahet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 17:20:47 by qhatahet          #+#    #+#             */
-/*   Updated: 2025/09/18 17:15:50 by qhatahet         ###   ########.fr       */
+/*   Updated: 2025/09/20 12:20:15 by qhatahet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	clean_textures(t_game *game)
 	}
 	else
 	{
-		printf(RED"Error"WH"there is no texture specifier\n");
+		printf(RED"Error"WH"\nthere is no texture specifier\n");
 		clean_game (game);
 		exit(EXIT_FAILURE);
 	}

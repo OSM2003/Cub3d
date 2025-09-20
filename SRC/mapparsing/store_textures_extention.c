@@ -6,7 +6,7 @@
 /*   By: qhatahet <qhatahet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 17:12:50 by qhatahet          #+#    #+#             */
-/*   Updated: 2025/09/18 17:14:51 by qhatahet         ###   ########.fr       */
+/*   Updated: 2025/09/20 12:20:05 by qhatahet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	check_duplicate(t_game *game)
 	}
 	if (check_flag(game))
 	{
-		printf(RED"Error"WH"\nduplicate in textures");
+		printf(RED"Error"WH"\nduplicate in textures\n");
 		clean_game(game);
 		exit(EXIT_FAILURE);
 	}

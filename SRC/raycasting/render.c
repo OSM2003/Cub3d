@@ -6,7 +6,7 @@
 /*   By: qhatahet <qhatahet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 15:49:24 by oalananz          #+#    #+#             */
-/*   Updated: 2025/09/18 17:04:46 by qhatahet         ###   ########.fr       */
+/*   Updated: 2025/09/20 12:21:36 by qhatahet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	render(t_game *game)
 
 	if (!game || !game->map || !game->player)
 	{
-		printf("Error: Invalid game data\n");
+		printf(RED"Error"WH"\nInvalid game data\n");
 		return (-1);
 	}
 	raycast = ft_calloc(1, sizeof(t_raycast));

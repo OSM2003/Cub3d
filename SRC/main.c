@@ -6,7 +6,7 @@
 /*   By: qhatahet <qhatahet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 14:45:40 by qhatahet          #+#    #+#             */
-/*   Updated: 2025/09/18 16:45:04 by qhatahet         ###   ########.fr       */
+/*   Updated: 2025/09/20 15:34:03 by qhatahet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,5 @@ int	main(int argc, char **argv)
 	}
 	init_game(game);
 	render(game);
-	//clean_game(game);
 	return (0);
 }
-

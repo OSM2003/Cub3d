@@ -6,7 +6,7 @@
 /*   By: qhatahet <qhatahet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 14:44:05 by qhatahet          #+#    #+#             */
-/*   Updated: 2025/09/18 17:22:55 by qhatahet         ###   ########.fr       */
+/*   Updated: 2025/09/20 16:16:46 by qhatahet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 # define CUB3D_H
 
 # include "../MLX42/include/MLX42/MLX42.h"
-#include "../libft/libft.h"
-#include <string.h>
-#include <math.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <stdint.h>
+# include "../libft/libft.h"
+# include <string.h>
+# include <math.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <stdint.h>
 
-#define WINDOW_WIDTH 1920
-#define WINDOW_HEIGHT 1080
+# define WINDOW_WIDTH 1920
+# define WINDOW_HEIGHT 1080
 
 typedef struct s_textures
 {
@@ -36,16 +36,16 @@ typedef struct s_textures
 
 typedef struct s_colors
 {
-	int	r;
-	int	g;
-	int	b;
-	uint32_t mixed;
+	int			r;
+	int			g;
+	int			b;
+	uint32_t	mixed;
 }	t_colors;
 
 typedef struct s_player
 {
-	float		row;
-	float		column;
+	float	row;
+	float	column;
 	char	c;
 }		t_player;
 
@@ -90,46 +90,45 @@ typedef struct s_game
 
 typedef struct s_draw
 {
-	double camera_x;
-	double ray_dir_x;
-	double ray_dir_y;
-	int map_x;
-	int map_y;
-	double delta_dist_x;
-	double delta_dist_y;
-	double perp_wall_dist;
-    int step_x;
-	int step_y;
-    double side_dist_x;
-	double side_dist_y;
-    int hit;
-	int side;
-	int line_height;
-	int draw_start;
-	int draw_end;
-	int tex_num;
-	int tex_x;
-	int tex_y;
-	int index;
-	double tex_pos;
-	double step;
-	double wall_x;
-	
+	double	camera_x;
+	double	ray_dir_x;
+	double	ray_dir_y;
+	int		map_x;
+	int		map_y;
+	double	delta_dist_x;
+	double	delta_dist_y;
+	double	perp_wall_dist;
+	int		step_x;
+	int		step_y;
+	double	side_dist_x;
+	double	side_dist_y;
+	int		hit;
+	int		side;
+	int		line_height;
+	int		draw_start;
+	int		draw_end;
+	int		tex_num;
+	int		tex_x;
+	int		tex_y;
+	int		index;
+	double	tex_pos;
+	double	step;
+	double	wall_x;
 }	t_draw;
 
 typedef struct s_raycast
 {
-    void *mlx;
-    mlx_image_t *img;
-    double pos_x;
-	double pos_y;
-    double dir_x;
-	double dir_y;
-    double plane_x;
-	double plane_y;
-	mlx_texture_t *wall_textures[4];	
-    t_game *game;
-} t_raycast;
+	void			*mlx;
+	mlx_image_t		*img;
+	double			pos_x;
+	double			pos_y;
+	double			dir_x;
+	double			dir_y;
+	double			plane_x;
+	double			plane_y;
+	mlx_texture_t	*wall_textures[4];
+	t_game			*game;
+}		t_raycast;
 
 void		flood_fill(t_game *game, int player_y, int player_x);
 void		ff_map(t_game *game);

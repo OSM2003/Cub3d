@@ -1,6 +1,6 @@
 CC = cc
 
-CFLAGS = -Werror -Wextra -Wall -g -IHeaders \
+CFLAGS = -Werror -Wextra -Wall -IHeaders \
          -IMLX42/include
 
 LIBFT_DIR = libft
@@ -10,11 +10,11 @@ MLX42_DIR = MLX42
 MLX42_BUILD = $(MLX42_DIR)/build
 MLX42_LIB = $(MLX42_BUILD)/libmlx42.a
 
-SRCS =  ./SRC/raycasting/render.c SRC/raycasting/render_utils.c SRC/raycasting/draw_walls.c \
+SRCS =  SRC/main.c ./SRC/raycasting/render.c SRC/raycasting/render_utils.c SRC/raycasting/draw_walls.c \
 	    SRC/raycasting/mouse.c SRC/raycasting/keyboard.c  SRC/raycasting/check.c SRC/raycasting/render_utils2.c \
 	    ./SRC/mapparsing/store_colors.c ./SRC/mapparsing/validate_colors.c SRC/mapparsing/floodfill.c  SRC/mapparsing/store_textures_extention.c \
         ./SRC/mapparsing/validate_colors_utils.c ./SRC/mapparsing/store_textures.c ./SRC/mapparsing/store_textures_utils.c \
-        ./SRC/mapparsing/validate_textures.c ./SRC/game_clean_up.c main.c ./SRC/mapparsing/store_map.c ./SRC/mapparsing/store_map_utils.c \
+        ./SRC/mapparsing/validate_textures.c ./SRC/game_clean_up.c ./SRC/mapparsing/store_map.c ./SRC/mapparsing/store_map_utils.c \
         ./SRC/mapparsing/map_validation.c ./SRC/mapparsing/element_validation.c ./SRC/mapparsing/read_file.c
 
 
