@@ -80,8 +80,6 @@ Textures (thumbnails):
 
 Gameplay screenshot (placeholder):
 
-If you want to add a gameplay screenshot, place an image at `Screenshot.png` (or update the path below) and it will render here:
-
 ![Gameplay screenshot](Screenshot.png)
 
 ASCII map example:
